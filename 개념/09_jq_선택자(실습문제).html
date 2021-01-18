@@ -35,16 +35,12 @@
             //[문]not: 두번째가 아닌 태그의 배경색 설정: 하늘색            
             $("li:not(:eq(2))").css("background-color", "skyblue");
 
-            //[문]contents(): 모든 컨텐츠의 글자크기: 부모요소의 2배 크기
+            //???[문]contents(): 모든 컨텐츠의 글자크기: 부모요소의 2배 크기
             // contents() : 자녀노드들 리턴(텍스트,주석,요소)
-
-
-
+            $("*").css("font-size","2rem");
 
             //[문]filter(): 컨텐츠 중에 strong 태그 배경색 설정: 회색
-            $("")
-
-
+            $("strong").css("background-color","grey");
 
             //[문]has: strong 태그 배경색: 녹색
             $("li:has('strong')").css("background-color", "green");
@@ -55,9 +51,9 @@
             //[문]find: a 태그의 border설정: 5px, 점선, 노랑
             $("a").css("border", "5px dotted yellow");
 
-            //[문]contains: a태그 텍스트에 menu3가 있는 태그의 부모의 자식요소들의 border설정: 5px,실선,녹색
+            //????[문]contains: a태그 텍스트에 menu3가 있는 태그의 부모의 자식요소들의 border설정: 5px,실선,녹색
             $("a").contains("menu3")
-                .parent()
+                .parent().children()
                 .css("border", "5px dotted yellow");
 
             //[문]last, children: li 태그중 마지막태그의 자녀들중에 마지막 요소의 border설정: 5px,실선,노랑   
@@ -65,17 +61,25 @@
 
 
             //[문]last, children: 마지막li 태그의 자녀 태그들중에 자녀를 폰트 크기를 부모태그의 3배로 키우기
-            //[-문]font-style을 italic(기울임) 적용하고, 부모요소의 border설정: 5px,solid,gray
+             //[-문]font-style을 italic(기울임) 적용하고, 부모요소의 border설정: 5px,solid,gray
+            //$("li:last").children().children().css("font-size","3em")
+                    //.css("font-style","italic").parent().css("border","5px solid gray");
 
+                    //$("ol>li:last").children().css('text-transform','uppercase');
+
+            //  $("li:last").children().children().css({'font-size':'3em',font-style:'italic'})
+            //         .parent().css("border","5px solid gray");
 
             //====================================================
             //======= ul 자식태그 li 에서 =====================
             //[문] li2 클래스인 것을 찾아 
             //  - border설정: 1px,실선,파랑
             //  - 글자색 설정: 빨강
+            $("ul>li").find(".li2").css("border","1px solid blue").css("color","red");
 
 
             //[문] not: 두번째 li가 아닌 것 글자색 설정: 녹색
+            $("li:not(:eq(2))").css("color","green");
 
 
 
