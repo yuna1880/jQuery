@@ -7,10 +7,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         $(document).ready(function() {
+            
             //DOM 객체를 찾아서 스타일 적용하는 형태로 DOM 다루기
             //[문]h1 태그를 찾아 border 설정 : 실선, 빨강
             $("h1").css("border", "1px solid red");
 
+            
             //--- ol 자녀(child)태그 li중에서 --------------
             //$("ol>li")
             //[문]contains: menu3 문자열이 있는 태그 찾아 border설정: 실선, 빨강
@@ -57,32 +59,26 @@
                 .css("border", "5px dotted yellow");
 
             //[문]last, children: li 태그중 마지막태그의 자녀들중에 마지막 요소의 border설정: 5px,실선,노랑   
-            $("li:last").children(":last").css("border", "5px dotted yellow");
-
+            $("li:last").children(":last").css("border", "5px dotted yellow"); 
 
             //[문]last, children: 마지막li 태그의 자녀 태그들중에 자녀를 폰트 크기를 부모태그의 3배로 키우기
              //[-문]font-style을 italic(기울임) 적용하고, 부모요소의 border설정: 5px,solid,gray
-            //$("li:last").children().children().css("font-size","3em")
-                    //.css("font-style","italic").parent().css("border","5px solid gray");
-
-                    //$("ol>li:last").children().css('text-transform','uppercase');
-
-            //  $("li:last").children().children().css({'font-size':'3em',font-style:'italic'})
-            //         .parent().css("border","5px solid gray");
+             // ol>li 가 전제임
+             //$("li:last").children().children().css({'font-size':'3em',font-style:'italic'})
+                 //    .parent().css("border","5px solid gray");
+             $("ol>li:last").children().children().css("font-size","3em")
+                .css("font-style","italic").parent().css("border","5px solid gray");
 
             //====================================================
             //======= ul 자식태그 li 에서 =====================
             //[문] li2 클래스인 것을 찾아 
             //  - border설정: 1px,실선,파랑
             //  - 글자색 설정: 빨강
-            $("ul>li").find(".li2").css("border","1px solid blue").css("color","red");
-
+            //$("ul>li").find(".li2").css("border","1px solid blue").css("color","red");
+            $("ul>li").filter("[class *= 'li2']").css("border","1px solid red").css("color","red");
 
             //[문] not: 두번째 li가 아닌 것 글자색 설정: 녹색
             $("li:not(:eq(2))").css("color","green");
-
-
-
         });
     </script>
 </head>
@@ -103,23 +99,11 @@
         </li>
     </ol>
     <hr>
-
+    
     <ul>
         <li>번호1</li>
         <li class="li2">번호2</li>
         <li>번호3</li>
     </ul>
 
-
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body></html>
-
-
-
-
-
-
-
-
-
