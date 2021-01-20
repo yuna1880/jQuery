@@ -30,12 +30,14 @@
             //(실습) 개인적으로 실습 !!!
             $("#prev").click(function(){
                 clickCnt--;
+                console.log("클릭시점 clickCnt : " + clickCnt);
                 //6이되면 초기화 해줘야한다. (맨 마지막까지 보여진 경우.)
-                if(clickCnt<1){
-                    clickCnt = 5;
+                if(clickCnt<0){
+                    clickCnt = 4;
                     $list.css("margin-right","0px");
+                    //$list.css("margin-left",-(200*clickCnt)+"px");
                 }
-                console.log("clickCnt : " + clickCnt);
+                console.log("동작시점 clickCnt : " + clickCnt);
                 $list.animate({"margin-left" :-200 * clickCnt + "px"},1000);
             });
 
@@ -61,7 +63,7 @@
         #frame {
             width: 600px;
             position: relative;
-            /* overflow: hidden; */
+            overflow: hidden;
         }
 
         #banner {
